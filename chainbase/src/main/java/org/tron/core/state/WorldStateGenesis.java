@@ -101,6 +101,10 @@ public class WorldStateGenesis {
       throw new IllegalStateException("StateRoot is not inited.");
     }
 
+    if (stateGenesisHeight == 0) {
+      return null;
+    }
+
     if (stateGenesisHeight > genesisHeight) {
       try {
         return genesisDBs.get(type).get(key);
